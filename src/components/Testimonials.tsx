@@ -1,0 +1,172 @@
+import React, { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
+
+const Testimonials: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const testimonials = [
+    {
+      name: 'Sarah Johnson',
+      position: 'CTO',
+      company: 'TechCorp Inc.',
+      avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
+      rating: 5,
+      text: 'SSS Smart Tech transformed our entire data infrastructure. Their expertise in data modernization helped us reduce costs by 60% while improving performance dramatically. The team is incredibly professional and responsive.',
+      project: 'Data Warehouse Migration'
+    },
+    {
+      name: 'Michael Chen',
+      position: 'CEO',
+      company: 'SecureFinance Ltd.',
+      avatar: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
+      rating: 5,
+      text: 'The cybersecurity solutions provided by SSS Smart Tech exceeded our expectations. Their comprehensive approach to security has given us complete peace of mind. Zero incidents since implementation.',
+      project: 'Enterprise Security Overhaul'
+    },
+    {
+      name: 'Emily Rodriguez',
+      position: 'Marketing Director',
+      company: 'GrowthTech Solutions',
+      avatar: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
+      rating: 5,
+      text: 'Their digital marketing strategy increased our online presence by 300%. The content quality and SEO expertise are unmatched. SSS Smart Tech truly understands how to drive results.',
+      project: 'Digital Marketing Campaign'
+    },
+    {
+      name: 'David Park',
+      position: 'Product Manager',
+      company: 'InnovateLab',
+      avatar: 'https://images.pexels.com/photos/1040881/pexels-photo-1040881.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
+      rating: 5,
+      text: 'The full-stack development team delivered our platform ahead of schedule. The code quality is exceptional, and the user experience is exactly what we envisioned. Highly recommended!',
+      project: 'E-commerce Platform Development'
+    },
+    {
+      name: 'Lisa Thompson',
+      position: 'Operations Director',
+      company: 'DataDriven Corp',
+      avatar: 'https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
+      rating: 5,
+      text: 'Working with SSS Smart Tech has been a game-changer. Their attention to detail and commitment to excellence is evident in every project. They truly care about client success.',
+      project: 'Business Process Automation'
+    }
+  ];
+
+  const nextTestimonial = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(nextTestimonial, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            What Our <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Clients Say</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Don't just take our word for it. Here's what our satisfied clients have to say about working with SSS Smart Tech.
+          </p>
+        </div>
+
+        {/* Testimonial Carousel */}
+        <div className="relative max-w-4xl mx-auto">
+          <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-3xl p-8 lg:p-12 relative overflow-hidden">
+            {/* Background Quote Icon */}
+            <div className="absolute top-8 left-8 opacity-10">
+              <Quote className="h-24 w-24 text-purple-600" />
+            </div>
+
+            {/* Navigation Buttons */}
+            <div className="absolute top-8 right-8 flex space-x-2">
+              <button
+                onClick={prevTestimonial}
+                className="w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                <ChevronLeft className="h-5 w-5 text-gray-600" />
+              </button>
+              <button
+                onClick={nextTestimonial}
+                className="w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                <ChevronRight className="h-5 w-5 text-gray-600" />
+              </button>
+            </div>
+
+            {/* Testimonial Content */}
+            <div className="relative z-10">
+              <div className="flex items-center mb-6">
+                <img
+                  src={testimonials[currentIndex].avatar}
+                  alt={testimonials[currentIndex].name}
+                  className="w-16 h-16 rounded-full object-cover border-4 border-white shadow-lg mr-4"
+                />
+                <div>
+                  <h4 className="text-xl font-bold text-gray-900">{testimonials[currentIndex].name}</h4>
+                  <p className="text-purple-600 font-medium">{testimonials[currentIndex].position}</p>
+                  <p className="text-gray-600">{testimonials[currentIndex].company}</p>
+                </div>
+              </div>
+
+              {/* Rating */}
+              <div className="flex items-center mb-6">
+                {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                ))}
+                <span className="ml-2 text-gray-600">({testimonials[currentIndex].rating}.0)</span>
+              </div>
+
+              {/* Testimonial Text */}
+              <blockquote className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-6 font-medium">
+                "{testimonials[currentIndex].text}"
+              </blockquote>
+
+              {/* Project Tag */}
+              <div className="inline-block px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full text-sm font-medium">
+                {testimonials[currentIndex].project}
+              </div>
+            </div>
+          </div>
+
+          {/* Testimonial Indicators */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? 'bg-gradient-to-r from-purple-600 to-blue-600 w-8'
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Client Logos */}
+        <div className="mt-20">
+          <p className="text-center text-gray-600 mb-8">Trusted by industry leaders</p>
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 items-center opacity-60">
+            {['TechCorp', 'SecureFinance', 'GrowthTech', 'InnovateLab', 'DataDriven'].map((company, index) => (
+              <div key={index} className="text-center">
+                <div className="text-2xl font-bold text-gray-400">{company}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Testimonials;
