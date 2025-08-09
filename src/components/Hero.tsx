@@ -28,15 +28,15 @@ const Hero: React.FC = () => {
               #1 Tech Solutions Provider
             </div>
 
-            <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fadeInUp delay-200">
+            <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-[1.25] animate-fadeInUp delay-200 overflow-visible">
               Transform Your
-              <span className="block bg-gradient-to-r from-purple-400 to-teal-400 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-purple-400 to-teal-400 bg-clip-text text-transparent pb-2">
                 Digital Future
               </span>
             </h1>
 
-            <p className="text-xl text-white/90 mb-8 max-w-2xl animate-fadeInUp delay-400">
-              Unlock unprecedented growth with our comprehensive suite of data services, cybersecurity solutions, content creation, digital marketing, and full-stack development.
+            <p className="text-xl text-white/90 mb-8 max-w-2xl animate-fadeInUp delay-400 text-justify">
+              Unlock unprecedented growth with our comprehensive suite of Data services, Full stack development, Language L1/L2/L3 Editing Services, Cyber Security, Talent Management and Offering services to College students / aspirants.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fadeInUp delay-600">
@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
                   <Users className="h-6 w-6 text-teal-400" />
                 </div>
                 <div className="text-2xl font-bold text-white">
-                  <CountUp end={150} duration={5} />+
+                  <CountUp end={10} duration={5} />+
                 </div>
                 <div className="text-sm text-white/70">Happy Clients</div>
               </div>

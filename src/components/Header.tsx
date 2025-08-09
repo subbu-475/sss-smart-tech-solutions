@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
-import logoImage from '../assets/navbar/logo.png'
+import logoImage from '../assets/navbar/ssssmarttech_original.png'
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,7 +31,7 @@ const Header: React.FC = () => {
             <img
               src={logoImage}
               alt="Smart Tech Logo"
-              className={`h-20 w-20 object-contain shadow-xl transition-all duration-300 ${isScrolled ? 'ring-2 ring-blue-600' : ''
+              className={`h-16 w-16 object-contain shadow-xl transition-all duration-300  rounded-xl bg-white ${isScrolled ? 'ring-2 ring-blue-600' : ''
                 }`}
             />
             <span

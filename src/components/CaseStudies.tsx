@@ -1,56 +1,174 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, TrendingUp, Users, DollarSign } from 'lucide-react';
+import { ExternalLink, TrendingUp, Users, DollarSign, Shield, Database } from 'lucide-react';
 
 const CaseStudies: React.FC = () => {
   const caseStudies = [
     {
+      title: 'IICS Migration for Enterprise Data Integration',
+      category: 'Data Services',
+      id: 'iics-migration',
+      description:
+        'Migrated legacy Informatica on-premise environment to Informatica Intelligent Cloud Services (IICS) ensuring minimal downtime, improved scalability, and enhanced performance for enterprise data integration.',
+      image:
+        'https://images.pexels.com/photos/1181272/pexels-photo-1181272.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      results: [
+        { metric: '99.9%', label: 'Uptime Post-Migration', icon: TrendingUp },
+        { metric: '30%', label: 'Improved Performance', icon: TrendingUp },
+        { metric: '50%', label: 'Maintenance Cost Reduction', icon: DollarSign }
+      ],
+      tags: ['IICS', 'Cloud Migration', 'ETL', 'Data Integration'],
+      color: 'from-teal-600 to-blue-600'
+    },
+    {
+      title: 'IDH Implementation for Master Data Management',
+      category: 'Data Services',
+      id: 'idh-implementation',
+      description:
+        'Implemented Informatica Data Hub (IDH) for centralized master data management, improving data consistency and enabling real-time data sharing across business units.',
+      image:
+        'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      results: [
+        { metric: '95%', label: 'Data Consistency', icon: TrendingUp },
+        { metric: '80%', label: 'Integration Efficiency', icon: Users },
+        { metric: '$1.5M', label: 'Annual Savings', icon: DollarSign }
+      ],
+      tags: ['IDH', 'MDM', 'Data Governance', 'Cloud'],
+      color: 'from-blue-600 to-purple-600'
+    },
+    {
+      title: 'PL/SQL Reports Migration to BO & Power BI',
+      category: 'Data Visualization',
+      id: 'plsql-to-bi',
+      description:
+        'Migrated complex PL/SQL-based reporting framework to modern BusinessObjects (BO) and Power BI platforms, enhancing reporting flexibility and self-service analytics.',
+      image:
+        'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      results: [
+        { metric: '60%', label: 'Faster Report Generation', icon: TrendingUp },
+        { metric: '100%', label: 'User Adoption', icon: Users },
+        { metric: '40%', label: 'Operational Efficiency', icon: DollarSign }
+      ],
+      tags: ['PL/SQL', 'BO', 'Power BI', 'Analytics'],
+      color: 'from-green-600 to-teal-600'
+    },
+    {
+      title: 'AI ChatBot Implementation for Customer Support',
+      category: 'Tech Services',
+      id: 'chatbot-implementation',
+      description:
+        'Developed and deployed an AI-powered chatbot integrated with enterprise CRM, automating FAQs, lead qualification, and support ticket creation for improved customer experience.',
+      image:
+        'https://images.pexels.com/photos/8386367/pexels-photo-8386367.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      results: [
+        { metric: '70%', label: 'Reduced Response Time', icon: TrendingUp },
+        { metric: '50%', label: 'Improved Lead Conversion', icon: Users },
+        { metric: '35%', label: 'Support Cost Savings', icon: DollarSign }
+      ],
+      tags: ['ChatBot', 'AI', 'NLP', 'Customer Support'],
+      color: 'from-purple-600 to-blue-600'
+    },
+    {
       title: 'E-Commerce Platform Transformation',
       client: 'RetailTech Inc.',
       category: 'Full-Stack Development',
+      id: 'full-stack-development',
       description:
         'Complete redesign and development of a modern e-commerce platform with integrated payment processing, inventory management, and customer analytics.',
       image:
         'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
       results: [
-        { metric: '300%', label: 'Increase in Sales', icon: DollarSign },
+        { metric: '0%', label: 'Gap in Sales', icon: DollarSign },
         { metric: '50%', label: 'Faster Load Times', icon: TrendingUp },
         { metric: '200%', label: 'User Engagement', icon: Users }
       ],
-      tags: ['React', 'Node.js', 'MongoDB', 'AWS'],
+      tags: ['React', 'Node.js', 'MongoDB', 'AWS', "CSS", "JAVA", "PostgreSQL"],
       color: 'from-blue-600 to-purple-600'
     },
     {
-      title: 'Enterprise Data Warehouse Migration',
-      client: 'DataCorp Solutions',
+      title: 'Enterprise Data Governance Implementation',
+
       category: 'Data Services',
+      id: 'data-services',
       description:
-        'Migrated legacy data systems to modern cloud infrastructure with real-time analytics capabilities and advanced visualization dashboards.',
+        'Implemented comprehensive data governance framework including data quality, catalog, lineage and MDM solutions for a multinational financial institution.',
       image:
         'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
       results: [
-        { metric: '75%', label: 'Cost Reduction', icon: DollarSign },
-        { metric: '10x', label: 'Query Performance', icon: TrendingUp },
-        { metric: '99.9%', label: 'Data Accuracy', icon: Users }
+        { metric: '95%', label: 'Data Accuracy', icon: TrendingUp },
+        { metric: '80%', label: 'Process Efficiency', icon: Users },
+        { metric: '$2.5M', label: 'Annual Savings', icon: DollarSign }
       ],
-      tags: ['AWS Redshift', 'Python', 'Tableau', 'ETL'],
-      color: 'from-teal-600 to-blue-600'
+      tags: ['Data Governance', 'MDM', 'Data Quality', 'Cloud'],
+      color: 'from-blue-600 to-teal-600'
     },
     {
-      title: 'Cybersecurity Infrastructure Overhaul',
-      client: 'SecureBank Financial',
+      title: 'Cloud Security Posture Management',
+
       category: 'Cybersecurity',
+      id: 'cybersecurity',
       description:
-        'Implemented comprehensive security measures including threat detection, identity management, and compliance monitoring for a financial institution.',
+        'Deployed CSPM solution across multi-cloud environment with continuous monitoring and automated compliance for healthcare data protection.',
       image:
         'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
       results: [
-        { metric: '100%', label: 'Threat Detection', icon: TrendingUp },
-        { metric: '0', label: 'Security Breaches', icon: Users },
-        { metric: '95%', label: 'Compliance Score', icon: DollarSign }
+        { metric: '100%', label: 'Compliance', icon: Shield },
+        { metric: '90%', label: 'Threat Reduction', icon: TrendingUp },
+        { metric: '60%', label: 'Cost Savings', icon: DollarSign }
       ],
-      tags: ['SIEM', 'Zero Trust', 'Identity Management', 'Compliance'],
+      tags: ['CSPM', 'Cloud Security', 'HIPAA', 'Compliance'],
       color: 'from-red-600 to-purple-600'
+    },
+    {
+      title: 'Data Warehouse Modernization',
+
+      category: 'Data Services',
+      id: 'data-services-modernization',
+      description:
+        'Migrated legacy data warehouse to modern cloud solution with real-time analytics and advanced visualization capabilities.',
+      image:
+        'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      results: [
+        { metric: '8x', label: 'Performance Gain', icon: TrendingUp },
+        { metric: '75%', label: 'Cost Reduction', icon: DollarSign },
+        { metric: '360°', label: 'Customer View', icon: Users }
+      ],
+      tags: ['Data Warehouse', 'Cloud Migration', 'ETL', 'Power BI'],
+      color: 'from-teal-600 to-blue-600'
+    },
+    {
+      title: 'AI-Driven GRC Implementation',
+
+      category: 'Cybersecurity',
+      id: 'cybersecurity-grc',
+      description:
+        'Deployed AI-powered Governance, Risk and Compliance platform with automated risk assessment and regulatory monitoring.',
+      image:
+        'https://images.pexels.com/photos/8386367/pexels-photo-8386367.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      results: [
+        { metric: '95%', label: 'Compliance Score', icon: Shield },
+        { metric: '40%', label: 'Faster Audits', icon: TrendingUp },
+        { metric: '$1.2M', label: 'Annual Savings', icon: DollarSign }
+      ],
+      tags: ['AI GRC', 'Risk Management', 'Compliance', 'Banking'],
+      color: 'from-purple-600 to-red-600'
+    },
+    {
+      title: 'Technical Content Localization',
+
+      category: 'Content Services',
+      id: 'content-services',
+      description:
+        'Comprehensive technical content editing and localization for software documentation across 12 languages with L3 quality assurance.',
+      image:
+        'https://images.pexels.com/photos/261662/pexels-photo-261662.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      results: [
+        { metric: '99.9%', label: 'Accuracy', icon: TrendingUp },
+        { metric: '50%', label: 'Faster Deployment', icon: Users },
+        { metric: '30%', label: 'Support Cost Reduction', icon: DollarSign }
+      ],
+      tags: ['Technical Editing', 'Localization', 'L3 QA', 'Documentation'],
+      color: 'from-green-600 to-teal-600'
     }
   ];
 
@@ -64,6 +182,7 @@ const CaseStudies: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Case{' '}
@@ -86,6 +205,7 @@ const CaseStudies: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
+              id={study.id}
             >
               <div
                 className={`absolute inset-0 bg-gradient-to-r ${study.color} opacity-0 group-hover:opacity-10 rounded-3xl blur-xl transition-all duration-300`}
@@ -111,7 +231,7 @@ const CaseStudies: React.FC = () => {
                 {/* Content */}
                 <div className="p-8">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{study.title}</h3>
-                  <p className="text-purple-600 font-medium mb-4">{study.client}</p>
+
                   <p className="text-gray-600 mb-6 leading-relaxed">{study.description}</p>
 
                   {/* Results */}
@@ -139,13 +259,7 @@ const CaseStudies: React.FC = () => {
                     ))}
                   </div>
 
-                  {/* CTA */}
-                  <button
-                    className={`inline-flex items-center text-sm font-medium bg-gradient-to-r ${study.color} bg-clip-text text-transparent hover:underline`}
-                  >
-                    View Full Case Study
-                    <ExternalLink className="ml-1 h-4 w-4" />
-                  </button>
+
                 </div>
               </div>
             </motion.div>

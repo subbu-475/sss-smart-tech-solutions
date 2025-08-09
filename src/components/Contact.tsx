@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Send, Phone, Mail, MapPin, Clock, CheckCircle } from 'lucide-react';
+import { FaLinkedin, FaFacebook, FaGithub } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -32,25 +34,36 @@ const Contact: React.FC = () => {
     {
       icon: Phone,
       title: 'Phone',
-      details: '044-4613 7620 / 91-98406 34143 / 91-98408 51742',
+      details: [
+        '044-4613 7620',
+        '+91-98406 34143',
+        '+91-98408 51742'
+      ],
       subtitle: 'Mon-Fri 9am-6pm IST'
     },
     {
       icon: Mail,
       title: 'Email',
-      details: 'Info@ssssmarttech.com / HR@ssssmarttech.com',
+      details: [
+        'info@ssssmarttech.com',
+        'hr@ssssmarttech.com'
+      ],
       subtitle: 'We reply within 24 hours'
     },
     {
       icon: MapPin,
       title: 'Office',
-      details: 'Karunai Sekaran Nagar 1st ST,Dr. Ambedkar Main Road, Nanmangalam, Chennai – 600 117',
+      details: [
+        'Karunai Sekaran Nagar 1st ST,',
+        'Dr. Ambedkar Main Road, Nanmangalam,',
+        'Chennai – 600 117, Tamil Nadu, India'
+      ],
       subtitle: 'Tamilnadu, India'
     },
     {
       icon: Clock,
       title: 'Business Hours',
-      details: 'Mon-Fri: 9am-6pm EST',
+      details: ['Mon-Fri: 9am-6pm EST'],
       subtitle: 'Weekend support available'
     }
   ];
@@ -102,14 +115,18 @@ const Contact: React.FC = () => {
 
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-start">
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl flex items-center justify-center mr-4">
+                  <div key={index} className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl flex items-center justify-center">
                       <info.icon className="h-6 w-6 text-white" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-white mb-1">{info.title}</h4>
-                      <p className="text-white/90">{info.details}</p>
-                      <p className="text-sm text-white/70">{info.subtitle}</p>
+                      {info.details.map((line, i) => (
+                        <p key={i} className="text-white/90">{line}</p>
+                      ))}
+                      {info.subtitle && (
+                        <p className="text-sm text-white/70 mt-1">{info.subtitle}</p>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -119,26 +136,38 @@ const Contact: React.FC = () => {
               <div className="mt-8 pt-8 border-t border-white/20">
                 <h4 className="font-semibold text-white mb-4">Follow Us</h4>
                 <div className="flex space-x-4">
-                  {['LinkedIn', 'Twitter', 'GitHub'].map((social, index) => {
-                    const href =
-                      social === 'LinkedIn'
-                        ? 'https://www.linkedin.com/in/sss-smart-tech-sss-smart-tech-6b9477335'
-                        : social === 'Twitter'
-                          ? 'https://twitter.com/SSSSmartTech'
-                          : 'https://github.com/SSSSmartTech'; // Assuming GitHub link
-
-                    return (
-                      <a
-                        key={index}
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
-                      >
-                        <span className="text-white text-sm font-medium">{social[0]}</span>
-                      </a>
-                    );
-                  })}
+                  <a
+                    href="https://www.linkedin.com/in/sss-smart-tech-sss-smart-tech-6b9477335"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+                  >
+                    <FaLinkedin className="text-white text-lg" />
+                  </a>
+                  <a
+                    href="https://facebook.com/SSSSmartTech"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+                  >
+                    <FaFacebook className="text-white text-lg" />
+                  </a>
+                  <a
+                    href="https://twitter.com/SSSSmartTech"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+                  >
+                    <FaXTwitter className="text-white text-lg" />
+                  </a>
+                  <a
+                    href="https://github.com/SSSSmartTech"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+                  >
+                    <FaGithub className="text-white text-lg" />
+                  </a>
                 </div>
               </div>
             </div>

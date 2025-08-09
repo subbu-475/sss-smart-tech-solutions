@@ -7,16 +7,18 @@ const testimonials = [
     {
         name: 'Tamilalagan L',
         title: 'Director & Co-Founder',
-        image: TamilImage, // Use the imported image variable directly
+        image: TamilImage,
         quote:
             'Our mission is to deliver intelligent, scalable solutions that exceed client expectations. We stand on the cutting edge of modern tech.',
+        link: 'https://claude.ai/public/artifacts/5f276aa4-9041-4333-af78-2c039a1abc37',
     },
     {
         name: 'Ashik Ahamad',
         title: 'Director & Co-Founder',
-        image: AshikImage, // Use the imported image variable directly
+        image: AshikImage,
         quote:
             'Innovation and integrity drive us. We craft solutions that not only solve today’s challenges but future-proof your digital growth.',
+        link: 'https://claude.ai/public/artifacts/4c37aad7-b59a-4c89-87ba-220038c4d6e9',
     },
 ];
 
@@ -62,9 +64,17 @@ const Testimonials: React.FC = () => {
                                         <p className="text-sm text-gray-600">{testimonial.title}</p>
                                     </div>
                                 </div>
-                                <p className="text-gray-700 text-md leading-relaxed italic">
+                                <p className="text-gray-700 text-md leading-relaxed italic mb-4">
                                     “{testimonial.quote}”
                                 </p>
+                                <a
+                                    href={testimonial.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-block text-sm text-white bg-gradient-to-r from-purple-600 to-blue-600 px-4 py-2 rounded-lg font-semibold shadow hover:opacity-90 transition"
+                                >
+                                    Browse Additional Detail
+                                </a>
                             </div>
                         </motion.div>
                     ))}

@@ -28,7 +28,7 @@ const WhyChooseUs: React.FC = () => {
   const reasons = [
     {
       icon: Clock,
-      title: '5+ Years Experience',
+      title: '2+ Years Experience',
       description: 'Proven track record of delivering exceptional technology solutions across diverse industries.',
       stat: '1000+',
       statLabel: 'Hours Saved'

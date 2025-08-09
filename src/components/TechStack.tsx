@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import CountUp from 'react-countup';
-import { Code, Database, Shield, Cloud, Smartphone, Globe } from 'lucide-react';
+import { Code, Database, Shield, Cloud, Smartphone, Globe, BarChart } from 'lucide-react';
 
 const TechStack: React.FC = () => {
   const categories = [
@@ -37,11 +37,26 @@ const TechStack: React.FC = () => {
       color: 'from-orange-600 to-red-600',
       technologies: [
         { name: 'AWS', description: 'Cloud platform' },
+        { name: 'Azure', description: 'Microsoft cloud platform' },
+        { name: 'GCP', description: 'Google Cloud Platform' },
         { name: 'Docker', description: 'Containerization' },
         { name: 'Kubernetes', description: 'Orchestration' },
         { name: 'Terraform', description: 'Infrastructure as code' },
         { name: 'GitHub Actions', description: 'CI/CD pipeline' },
         { name: 'Microservices', description: 'Scalable architecture' }
+      ]
+    },
+    {
+      icon: BarChart,
+      title: 'Data Warehouse & Data Visualization',
+      color: 'from-teal-600 to-blue-600',
+      technologies: [
+        { name: 'Data Modelling / Data Lake', description: 'Enterprise data structuring' },
+        { name: 'ETL', description: 'Informatica Power Center / IICS, Data Stage, Abinitio, PySpark, AWS Glue' },
+        { name: 'Data Governance', description: 'Informatica Data Quality, EDC, AXON' },
+        { name: 'Reports', description: 'Business Objects R4' },
+        { name: 'Visualization', description: 'Power BI, Tableau, Qlikview, Qliksense, Qlik NPrinting' },
+        { name: 'Databricks / PySpark', description: 'Big data analytics' }
       ]
     },
     {
@@ -103,7 +118,7 @@ const TechStack: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {categories.map((category, index) => (
             <motion.div
               key={index}
@@ -111,10 +126,11 @@ const TechStack: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative"
+              className={`group relative ${index === categories.length - 1 && categories.length % 2 !== 0 ? 'md:col-span-2' : ''}`}
             >
-              <div className={`absolute inset-0 bg-gradient-to-r ${category.color} opacity-0 group-hover:opacity-10 rounded-3xl blur-xl transition-all duration-300`} />
-              <div className="relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-8 border border-gray-100">
+              {/* Card Content */}
+              <div className="relative bg-white rounded-3xl shadow-lg p-8 border border-gray-100 h-full hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                {/* Card header */}
                 <div className="flex items-center mb-6">
                   <div className={`w-12 h-12 bg-gradient-to-r ${category.color} rounded-xl flex items-center justify-center mr-4`}>
                     <category.icon className="h-6 w-6 text-white" />
@@ -122,14 +138,12 @@ const TechStack: React.FC = () => {
                   <h3 className="text-xl font-bold text-gray-900">{category.title}</h3>
                 </div>
 
-                <div className="space-y-4">
+                {/* Tech grid */}
+                <div className="grid grid-cols-2 gap-3">
                   {category.technologies.map((tech, techIndex) => (
-                    <div key={techIndex} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
-                      <div>
-                        <div className="font-semibold text-gray-900">{tech.name}</div>
-                        <div className="text-sm text-gray-600">{tech.description}</div>
-                      </div>
-                      <div className={`w-2 h-2 bg-gradient-to-r ${category.color} rounded-full`} />
+                    <div key={techIndex} className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
+                      <div className="font-semibold text-gray-900 text-sm">{tech.name}</div>
+                      <div className="text-xs text-gray-600">{tech.description}</div>
                     </div>
                   ))}
                 </div>
@@ -137,6 +151,10 @@ const TechStack: React.FC = () => {
             </motion.div>
           ))}
         </div>
+
+
+
+
 
         {/* Animated Stats */}
         <motion.div
@@ -148,8 +166,8 @@ const TechStack: React.FC = () => {
         >
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center text-white">
             {[
-              { label: 'Technologies Mastered', end: 50 },
-              { label: 'Years Experience', end: 5 },
+              { label: 'Technologies Mastered', end: 15, suffix: '+' },
+              { label: 'Years Experience', end: 2, suffix: '+' },
               { label: 'Latest Versions', end: 100, suffix: '%' },
               { label: 'Support Available', end: 24, suffix: '/7' }
             ].map((stat, i) => (

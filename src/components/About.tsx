@@ -32,8 +32,8 @@ const About: React.FC = () => {
   ];
 
   const stats = [
-    { number: '500+', label: 'Projects Completed', icon: Award },
-    { number: '150+', label: 'Happy Clients', icon: Users },
+    { number: '50+', label: 'Projects Completed', icon: Award },
+    { number: '10+', label: 'Happy Clients', icon: Users },
     { number: '99.9%', label: 'Uptime Guarantee', icon: Shield },
     { number: '24/7', label: 'Support Available', icon: Zap }
   ];
@@ -46,7 +46,7 @@ const About: React.FC = () => {
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             About <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">SSS Smart Tech</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto text-justify">
             We're a forward-thinking technology company that transforms businesses through innovative digital solutions,
             comprehensive security measures, and strategic growth initiatives.
           </p>
@@ -81,7 +81,7 @@ const About: React.FC = () => {
                   <Award className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-gray-900">5 Years</div>
+                  <div className="text-2xl font-bold text-gray-900">2 Years</div>
                   <div className="text-sm text-gray-600">Excellence</div>
                 </div>
               </div>
@@ -98,10 +98,9 @@ const About: React.FC = () => {
             <h3 className="text-3xl font-bold text-gray-900 mb-6">
               Pioneering Digital Excellence
             </h3>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-lg text-gray-600 mb-8 text-justify">
               Founded with a vision to democratize advanced technology solutions, SSS Smart Tech has grown from a small startup
-              to a trusted partner for businesses worldwide. Our multidisciplinary approach combines data science, cybersecurity,
-              content strategy, digital marketing, and full-stack development to deliver comprehensive solutions.
+              to a trusted partner for businesses worldwide. Our multidisciplinary approach combines Data services, Full stack development, Language L1/L2/L3 Editing Services, Cyber Security, Talent Management and Offering services to College students / aspirants.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6">
@@ -119,7 +118,7 @@ const About: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{feature.title}</h4>
-                    <p className="text-sm text-gray-600">{feature.description}</p>
+                    <p className="text-sm text-gray-600 text-justify">{feature.description}</p>
                   </div>
                 </motion.div>
               ))}

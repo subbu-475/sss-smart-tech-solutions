@@ -1,6 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
 
+import ApecLogo from "../assets/logos/apex.png";
+import TholgaLogo from "../assets/logos/tholga.png";
+import TechnaviousLogo from "../assets/logos/tech.png";
+import UniqueLogo from "../assets/logos/unique.png";
+import IigemLogo from "../assets/logos/iigm.png";
+import UtasLogo from "../assets/logos/uta.png";
+
+const companies = [
+  { name: "Apec Covantage", logo: ApecLogo },
+  { name: "Tholga Publishing Services", logo: TholgaLogo },
+  { name: "Technavious", logo: TechnaviousLogo },
+  { name: "Unique Engineering Groups", logo: UniqueLogo },
+  { name: "IIGEM", logo: IigemLogo },
+  { name: "UTAS", logo: UtasLogo },
+];
+
 const Testimonials: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -143,11 +159,10 @@ const Testimonials: React.FC = () => {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
                     ? 'bg-gradient-to-r from-purple-600 to-blue-600 w-8'
                     : 'bg-gray-300 hover:bg-gray-400'
-                }`}
+                  }`}
               />
             ))}
           </div>
@@ -155,11 +170,18 @@ const Testimonials: React.FC = () => {
 
         {/* Client Logos */}
         <div className="mt-20">
-          <p className="text-center text-gray-600 mb-8">Trusted by industry leaders</p>
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 items-center opacity-60">
-            {['TechCorp', 'SecureFinance', 'GrowthTech', 'InnovateLab', 'DataDriven'].map((company, index) => (
-              <div key={index} className="text-center">
-                <div className="text-2xl font-bold text-gray-400">{company}</div>
+          <p className="text-center text-gray-600 mb-8 text-lg font-medium">
+            Trusted by Industry Leaders
+          </p>
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 items-center opacity-80">
+            {companies.map((company, index) => (
+              <div key={index} className="flex flex-col items-center text-center">
+                <img
+                  src={company.logo}
+                  alt={`${company.name} Logo`}
+                  className="h-12 w-auto object-contain mb-2 transition duration-300"
+                />
+                <div className="text-sm font-medium text-gray-700">{company.name}</div>
               </div>
             ))}
           </div>
