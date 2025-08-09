@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
                 Get the latest insights on technology trends, best practices, and exclusive offers delivered to your inbox.
               </p>
             </div>
-            
+
             <div className="lg:text-right">
               <form className="flex flex-col sm:flex-row gap-4 max-w-md lg:ml-auto">
                 <input
@@ -69,11 +69,15 @@ const Footer: React.FC = () => {
             <p className="text-gray-400 mb-6 leading-relaxed">
               Transforming businesses through innovative technology solutions, comprehensive security measures, and strategic growth initiatives.
             </p>
-            
+
             <div className="space-y-3">
-              <div className="flex items-center">
-                <Phone className="h-4 w-4 text-purple-400 mr-3" />
-                <span className="text-gray-400">044-4613 7620 / 91-98406 34143 / 91-98408 51742</span>
+              <div className="flex items-start">
+                <Phone className="h-4 w-4 text-purple-400 mr-3 mt-1" />
+                <span className="text-gray-400">
+                  044-4613 7620<br />
+                  +91-98406 34143<br />
+                  +91-98408 51742
+                </span>
               </div>
               <div className="flex items-center">
                 <Mail className="h-4 w-4 text-purple-400 mr-3" />
@@ -149,7 +153,7 @@ const Footer: React.FC = () => {
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
               {new Date().getFullYear()} SSS Smart Tech. All rights reserved.
             </div>
-            
+
             <div className="flex items-center space-x-6">
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
                 Privacy Policy
