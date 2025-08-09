@@ -136,23 +136,23 @@ const CaseStudies: React.FC = () => {
       tags: ['Data Warehouse', 'Cloud Migration', 'ETL', 'Power BI'],
       color: 'from-teal-600 to-blue-600'
     },
-    {
-      title: 'AI-Driven GRC Implementation',
+    // {
+    //   title: 'AI-Driven GRC Implementation',
 
-      category: 'Cybersecurity',
-      id: 'cybersecurity-grc',
-      description:
-        'Deployed AI-powered Governance, Risk and Compliance platform with automated risk assessment and regulatory monitoring.',
-      image:
-        'https://images.pexels.com/photos/8386367/pexels-photo-8386367.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-      results: [
-        { metric: '95%', label: 'Compliance Score', icon: Shield },
-        { metric: '40%', label: 'Faster Audits', icon: TrendingUp },
-        { metric: '$1.2M', label: 'Annual Savings', icon: DollarSign }
-      ],
-      tags: ['AI GRC', 'Risk Management', 'Compliance', 'Banking'],
-      color: 'from-purple-600 to-red-600'
-    },
+    //   category: 'Cybersecurity',
+    //   id: 'cybersecurity-grc',
+    //   description:
+    //     'Deployed AI-powered Governance, Risk and Compliance platform with automated risk assessment and regulatory monitoring.',
+    //   image:
+    //     'https://images.pexels.com/photos/8386367/pexels-photo-8386367.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+    //   results: [
+    //     { metric: '95%', label: 'Compliance Score', icon: Shield },
+    //     { metric: '40%', label: 'Faster Audits', icon: TrendingUp },
+    //     { metric: '$1.2M', label: 'Annual Savings', icon: DollarSign }
+    //   ],
+    //   tags: ['AI GRC', 'Risk Management', 'Compliance', 'Banking'],
+    //   color: 'from-purple-600 to-red-600'
+    // },
     {
       title: 'Technical Content Localization',
 
